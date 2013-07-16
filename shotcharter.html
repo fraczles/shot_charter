@@ -1,0 +1,34 @@
+<html>
+	<head>
+	<title>Bouncing Circles</title>
+	<script>
+	window.requestAnimFrame = (function(){
+  	return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+	</script>
+	</head>
+	<body style="margin: 0px" oncontextmenu="return false">
+		<h1>SHOT CHARTER</h1>
+		<img id="hit" src="http://www.kidsdentalonline.com/images/green_dot.jpg">
+		<form>
+		Select team:
+		<select id="teamList" onchange="selectedTeam()">
+			<option></option>
+			<option>Knicks</option>
+		</select>
+		<p>Your team is: <input type="text" id="favorite" size="20"></p>
+		</form>	
+		<canvas width="800" height="600" id="myCanvas"> </canvas>
+		<script src="shotcharter.js">
+		$('body').on('contextmenu', 'img', function(e){ return false; });
+		</script>
+	</body>
+
+</html>
